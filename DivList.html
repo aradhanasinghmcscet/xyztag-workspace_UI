@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Div List</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<style>
+    .ol{
+    display:block;
+    overflow: hidden;
+    counter-reset: numList;
+    padding: 0; 
+    margin-bottom:0;
+}
+.ol .li{
+    border-bottom: 1px solid #cccccc;
+    position: relative;
+    display: block;
+    line-height: 20px;
+    padding: 30px 60px;
+    padding-bottom: 60px;
+}
+.ol .li:hover, .ol .li:active, .ol .li:focus{
+    background-color: blue;
+  border: solid 1px #cccccc;
+}
+.ol .li.inactive{
+    background-color: #ffffff;
+    border: solid 1px #636363;
+}
+
+.ol a:hover:before{
+   
+}
+
+.ol .li:before{
+    counter-increment: numList;
+    content: counter(numList);
+    font: bold 12px sans-serif;
+    position: absolute; 
+    left: 1em;
+    top: 50%;
+    background-color: rgba(21, 196, 185, 0.14);    
+    width: 28px;
+    height: 20px;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 12px;
+    transition: all .3s ease-out;
+    color:green;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="ol">
+        <div class="li">
+          List1
+        </div>
+        <div class="li">
+          List1
+        </div>
+        <div class="li">
+          List1
+        </div><div class="li">
+          List1
+        </div>
+        <div class="li">
+          List1
+        </div>
+      </div>
+
+</body>
+</html>
