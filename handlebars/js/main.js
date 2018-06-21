@@ -1,6 +1,5 @@
 //var myTemplate = require("./myTemplate.hbs");
 //https://learnwebcode.github.io/json-example/pets-data.json
-//https://s3.amazonaws.com/viome-cdn/Temp/recs1_7.json
 var myRequest = new XMLHttpRequest();
 myRequest.open('GET', 'https://learnwebcode.github.io/json-example/pets-data.json');
 myRequest.onload = function() {
@@ -18,6 +17,16 @@ myRequest.onerror = function() {
 };
 
 myRequest.send();
+Handlebars.registerHelper("calculateAge", function(birthYear){
+    var age = new Date().getFullYear() - birthYear;
+    //return age;
+    if(age>0){
+        return age+ "years old";
+    }
+    else{
+        return "Less than a Year Old";
+    }
+})
 
 function createHTML(myData) {
   //var petsContainer = document.getElementById("pets-container");
@@ -26,6 +35,6 @@ function createHTML(myData) {
   var compileTemplate = Handlebars.compile(myTemplate);
   var myGeneratedHTML = compileTemplate(myData);
 
-  var tempDataContainer = document.getElementById('tempdataContainer');
-  tempDataContainer.innerHTML = tempDataContainer;
+  var tempDataContainer = document.getElementById('pet-container');
+  tempDataContainer.innerHTML = myGeneratedHTML;
 }
