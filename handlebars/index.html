@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Handlebars</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="page-wrap">
+    <h1>Handlebars Template</h1>
+    <div id="tempdataContainer"></div>
+  </div>
+<script id="firstTemplate" type="text/Handlebars">
+    {{#each pets}}
+    <h2>{{name}}</h2>
+    {{/each}}
+</script>
+  <script src="js/main.js"></script>
+  <script src="js/handlebars-v4.0.11.js"></script>
+</body>
+</html>
